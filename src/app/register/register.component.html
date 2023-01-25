@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div>
+    <h2 class="mb-4 mt-2">Register Form</h2>
+    <p> This is a Dummy content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolore, natus nisi ducimus minus nam! Quibusdam omnis alias excepturi voluptatem error maxime laudantium magnam quis tempora itaque in, quaerat inventore.
+    Fugit autem ipsa consequatur illum, unde molestiae repellat omnis sequi. Cumque, vitae. Exercitationem placeat, ipsum doloribus est nam ipsam recusandae corporis temporibus qui cupiditate, totam ut consequuntur atque minus quidem.
+    Neque possimus blanditiis veritatis est omnis. Autem, vero. Similique veniam quidem dolorum maiores cum ea a quos odio delectus? Consectetur, inventore veniam? Suscipit cupiditate iusto veniam quae a. Laudantium, maxime!
+    Natus reprehenderit rerum atque dignissimos? Quam corporis dolorem nisi, quos quis deleniti nihil deserunt accusantium expedita cumque! Consequuntur vel nam nemo ullam blanditiis ea eius vitae! Nisi nam enim aperiam.
+    Esse aperiam voluptate ea asperiores alias maiores vel. Dolore sint asperiores laudantium expedita quis at error laboriosam quas, iure unde, aspernatur, quibusdam molestias ullam provident vel quam rem eveniet quos.</p>
+         <div class="row">
+            <div class="col-5 align-items-center"> <img class="m-4" src="https://uxwing.com/wp-content/themes/uxwing/download/editing-user-action/new-registration-icon.png"
+                 alt="no image" height="300px" width="400px">                 <div> <a routerLink="/" class="btn btn-warning align-items-center">Back</a></div>
+                </div><br>
+                 
+            <div class="col-7 mt-5">
+                <form (ngSubmit)="register()" [formGroup]="registerForm" class="border mt-5 me-5 p-5">
+                    <div class="mb-2">
+                        <input name="uname" formControlName="uname" type="text" placeholder="User Name..." id="floatingInput" class="form-control">
+                    </div>
+                    <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" class="text-danger mb-2">Invalid User Name</div>
+                    <div class="mb-2">
+                        <input name="acno" formControlName="acno" type="text" placeholder="Account number" id="floatingInput" class="form-control">
+                    </div>
+                    <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" class="text-danger mb-2">Invalid Account Number</div>
+                    <div>
+                        <input name="pswd" formControlName="pswd" type="password" placeholder="Password" id="floatingPassword" class="form-control">
+                    </div>
+                    <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" class="text-danger mb-2">Invalid Password</div>
+        
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-success">Register</button>
+                    &nbsp;
+                    <p>New User? Click here to <a routerLink="/">Login</a></p>
+                    </div>
+                </form>
+            </div>
+</div>
